@@ -1,0 +1,73 @@
+<div class="row">
+    {{#each lists}}
+    <div class="col-md-6">
+
+        <div class="card">
+
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}}<a href="/list/edit/{{_id}}"><i class="fa fa-pencil"></i></a></h5>
+                <img src={{path}} class="card-img-top">
+               
+                <div class="card border-light mb-2" >
+                    
+                    <div class="card-header">Descripción</div>
+                    <div class="card-body">
+                        <p class="card-text">{{descripcion}}</p>
+                    </div>
+                </div>
+                <p class="card-text"></p>
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item">1. {{item1}}</li>
+                    <li class="list-group-item">2. {{item2}}</li>
+                    <li class="list-group-item">3. {{item3}}</li>
+                    <li class="list-group-item">4. {{item4}}</li>
+                    <li class="list-group-item">5. {{item5}}</li>
+                </ul>
+                
+                <form action="/list/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm"> Eliminar</button>
+                </form>
+
+            </div>
+        </div>
+        {{!-- <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}} <a href="/list/edit/{{_id}}"><i class="fa fa-pencil"></i></a>
+                </h4>
+                <div class="card-body">
+                    <label for="">Descripcion</label>
+                    <p>{{descripcion}}</p>
+                </div>
+                <div class="card-body">
+                    <p>{{item1}}</p>
+                    <p>{{item2}}</p>
+                    <p>{{item3}}</p>
+                    <p>{{item4}}</p>
+                    <p>{{item5}}</p>
+                </div>
+                
+
+                <form action="/list/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm"> Eliminar</button>
+                </form>
+
+            </div>
+        </div> --}}
+    </div>
+    <br>
+    {{else}}
+
+    <div class="card text-white bg-info mb-3 mx-auto" style="max-width: 18rem;">
+        <div class="card-header mx-auto">Sin listas.</div>
+        <div class="card-body">
+            <h5 class="card-title">No tienes ni una lista creada.</h5>
+            <p class="card-text">Para poder crear una lista, presiona el sigueinte boton :)</p>
+            <a href="/lists/add" class="btn btn-primary btn-block">Crear lista :)</a>
+        </div>
+    </div>
+    {{/each}}
+</div>

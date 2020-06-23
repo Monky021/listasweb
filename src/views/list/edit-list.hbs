@@ -1,0 +1,50 @@
+<div class="col md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar lista</h3>
+        </div>
+        <div class="card-body">
+            <form action="/list/edit/{{list.id}}?_method=put" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control" value="{{list.title}}">
+                </div>
+                <div class="form-group">
+                    <textarea name="descripcion" class="form-control">{{list.descripcion}}</textarea>
+                </div>
+                
+                <ol>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" name="item1" class="form-control" placeholder="item 1" value="{{list.item1}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" name="item2" class="form-control" placeholder="item 2" value="{{list.item2}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" name="item3" class="form-control" placeholder="item 3" value="{{list.item3}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" name="item4" class="form-control" placeholder="item 4" value="{{list.item4}}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <input type="text" name="item5" class="form-control" placeholder="item 5" value="{{list.item5}}">
+                        </div>
+                    </li>
+                </ol>
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-block">Guardar lista!</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
